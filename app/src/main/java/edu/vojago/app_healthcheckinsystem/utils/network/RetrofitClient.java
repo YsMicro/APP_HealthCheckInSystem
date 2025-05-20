@@ -1,4 +1,4 @@
-package edu.vojago.app_healthcheckinsystem;
+package edu.vojago.app_healthcheckinsystem.utils.network;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;

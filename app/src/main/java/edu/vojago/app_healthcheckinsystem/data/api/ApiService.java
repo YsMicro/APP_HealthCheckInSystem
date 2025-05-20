@@ -1,5 +1,6 @@
-package edu.vojago.app_healthcheckinsystem;
+package edu.vojago.app_healthcheckinsystem.data.api;
 
+import edu.vojago.app_healthcheckinsystem.ui.auth.LoginActivity;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.POST;

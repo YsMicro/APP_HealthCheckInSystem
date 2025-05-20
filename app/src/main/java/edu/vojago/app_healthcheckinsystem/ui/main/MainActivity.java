@@ -1,5 +1,5 @@
 
-package edu.vojago.app_healthcheckinsystem;
+package edu.vojago.app_healthcheckinsystem.ui.main;
 
 import android.os.Bundle;
 
@@ -8,6 +8,11 @@ import androidx.fragment.app.Fragment;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
+
+import edu.vojago.app_healthcheckinsystem.R;
+import edu.vojago.app_healthcheckinsystem.ui.chart.ChartFragment;
+import edu.vojago.app_healthcheckinsystem.ui.profile.ProfileFragment;
+import edu.vojago.app_healthcheckinsystem.ui.record.RecordFragment;
 
 public class MainActivity extends AppCompatActivity {
 

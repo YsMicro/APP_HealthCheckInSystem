@@ -1,4 +1,4 @@
-package edu.vojago.app_healthcheckinsystem;
+package edu.vojago.app_healthcheckinsystem.ui.auth;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,6 +12,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.io.IOException;
 
+import edu.vojago.app_healthcheckinsystem.R;
+import edu.vojago.app_healthcheckinsystem.data.api.ApiService;
+import edu.vojago.app_healthcheckinsystem.ui.main.MainActivity;
+import edu.vojago.app_healthcheckinsystem.utils.network.RetrofitClient;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
