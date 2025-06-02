@@ -10,8 +10,8 @@ android {
         applicationId = "edu.vojago.app_healthcheckinsystem"
         minSdk = 24
         targetSdk = 35
-        versionCode = 3
-        versionName = "0.2.0"
+        versionCode = 4
+        versionName = "0.3.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -39,6 +39,7 @@ dependencies {
     implementation(libs.constraintlayout)
     implementation(libs.retrofit)  // 添加 Retrofit 依赖
     implementation(libs.retrofit.converter.gson)  // 添加 Gson 转换器依赖
+    implementation(libs.mp.android.chart)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)

@@ -10,4 +10,5 @@
     <color name="colorLifeGreen">#28A745</color>
     <!-- 生命蓝色 -->
     <color name="colorLifeBlue">#0077B6</color>
+    <color name="colorOnSurface">#FF1A1A1A</color>
 </resources>

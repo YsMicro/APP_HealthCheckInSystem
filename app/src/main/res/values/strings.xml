@@ -7,4 +7,11 @@
     <string name="please_input_username">请输入用户名</string>
     <string name="please_input_password">请输入密码</string>
     <string name="login">登录</string>
+    <string name="add_health_record">添加健康记录</string>
+    <string name="temperature">体温 (°C)</string>
+    <string name="symptoms">症状</string>
+    <string name="record_time">记录时间</string>
+    <string name="remark">备注</string>
+    <string name="cancel">取消</string>
+    <string name="confirm">确认</string>
 </resources>

@@ -1,5 +1,5 @@
 [versions]
-agp = "8.10.0"
+agp = "8.10.1"
 junit = "4.13.2"
 junitVersion = "1.2.1"
 espressoCore = "3.6.1"
@@ -8,6 +8,7 @@ material = "1.12.0"
 activity = "1.10.1"
 constraintlayout = "2.2.1"
 retrofit = "2.9.0"  # 添加 Retrofit 版本
+mp-android-chart = "v3.1.0"
 
 [libraries]
 junit = { group = "junit", name = "junit", version.ref = "junit" }
@@ -19,6 +20,7 @@ activity = { group = "androidx.activity", name = "activity", version.ref = "acti
 constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
 retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }  # 添加 Retrofit 依赖
 retrofit-converter-gson = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "retrofit" }  # 添加 Gson 转换器依赖
+mp-android-chart = { group = "com.github.PhilJay", name = "MPAndroidChart", version.ref = "mp-android-chart" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
