@@ -1,6 +1,7 @@
 package edu.vojago.app_healthcheckinsystem.ui.auth;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -73,8 +74,20 @@ public class LoginActivity extends AppCompatActivity {
 
                     if (response.isSuccessful() && response.body() != null) {
                         // 登录成功，跳转到主界面
-                        startActivity(new Intent(LoginActivity.this, MainActivity.class));
-                        finish();
+                        if (response.body().getCode() == 1) {
+
+                            // 在跳转前添加：
+                            String token = response.body().getData();
+                            SharedPreferences prefs = getSharedPreferences("auth", MODE_PRIVATE);
+                            prefs.edit().putString("jwt_token", token).apply();
+
+                            startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                            finish();
+                        } else {
+                            Toast.makeText(LoginActivity.this,
+                                    "登录失败：" + response.body().getMessage(),
+                                    Toast.LENGTH_LONG).show();
+                        }
                     } else {
                         // 新增：解析错误体
                         try {
@@ -91,7 +104,15 @@ public class LoginActivity extends AppCompatActivity {
                     progressBar.setVisibility(View.GONE);
                     btnLogin.setEnabled(true);
                     // 新增：显示完整错误信息
-                    Toast.makeText(LoginActivity.this, "网络错误：" + t.getMessage(), Toast.LENGTH_LONG).show();
+                    if (t instanceof IOException) {
+                        Toast.makeText(LoginActivity.this,
+                                "网络连接异常，请检查网络",
+                                Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(LoginActivity.this,
+                                "未知错误：" + t.getMessage(),
+                                Toast.LENGTH_SHORT).show();
+                    }
                 }
             });
         } catch (Exception e) {
@@ -117,6 +138,7 @@ public class LoginActivity extends AppCompatActivity {
     public static class LoginResponse {
         private int code;
         private String message;
+        private String data;
 
         public int getCode() {
             return code;
@@ -124,6 +146,10 @@ public class LoginActivity extends AppCompatActivity {
 
         public String getMessage() {
             return message;
+        }
+
+        public String getData() {
+            return data;
         }
     }
 }
